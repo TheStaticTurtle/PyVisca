@@ -1,0 +1,14 @@
+from pyvisca import Visca
+
+visca = Visca()
+
+packets = [
+	b"\x81\x01\x04\x00\x02\xff",
+	b"\x81\x01\x04\x07\x25\xff",
+	b"\x81\x01\x04\x47\x0c\x00\x00\x00\xff",
+	b"\x81\x01\x06\x01\x0a\x0a\x03\x01\xff",
+]
+
+for packet in packets:
+	result = visca.parse(packet)
+	print(*result)
